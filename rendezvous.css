@@ -299,43 +299,233 @@ button {
 }
 
 .rdv-form-container {
-  margin-top: 20px;
-  /* padding: 20px 20px 20px 20px; */
+  margin-top: 40px;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 form {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 30px;
   width: 100%;
 }
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="tel"] {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #3b82f6; 
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+label {
+  font-weight: 600;
+  color: #333;
+}
+
+.motif-item input[type="radio"] {
+  accent-color: #3b82f6; 
+  cursor: pointer;
+}
+
+.motif-item label {
+  font-weight: 500;
+  cursor: pointer;
+}
+
+
+.rdv-btn-submit {
+  grid-column: span 2; /* bouton sur toute la largeur */
+  display: flex;
+  justify-content: left;
+  margin-top: 20px;
+}
+
+.rdv-btn-submit button {
+  background-color:var(--blue-color);
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.rdv-btn-submit button:hover {
+  background-color:var(--blue-color);
+}
+
 
 .rdv-left-form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px; /* un peu plus d'espace */
 }
 
 .rdv-left-form-item {
   display: flex;
   flex-direction: column;
-  justify-content: left;
-  gap: 10px;
+  gap: 8px;
 }
 
 .rdv-left-form-item label {
   font-size: 1rem;
+  font-weight: 600; /* Pour harmoniser avec le reste */
+  color: #333;
 }
+
 
 .rdv-left-form-item .motif-item {
   display: flex;
-  flex-direction: row;
-  /* justify-content: center; */
-  gap: 10px;
+  flex-wrap: wrap; /* S’adapte mieux en responsive */
+  gap: 15px;
+}
+
+.rdv-left-form-item .motif-item input[type="radio"] {
+  accent-color: #3b82f6;
+  cursor: pointer;
 }
 
 .rdv-left-form-item .motif-item input {
   width: 20px;
   height: 20px;
   padding: 10px;
+}
+
+.rdv-right-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.rdv-right-form-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rdv-right-form-item label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.rdv-right-form-item input[type="text"],
+.rdv-right-form-item input[type="tel"],
+.rdv-right-form-item input[type="date"] {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+.rdv-right-form-item input:focus {
+  outline: none;
+  border-color:var(--blue-color);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+.line-container{
+    margin-top: 20px;
+    display: flex;
+    width: 600px;
+    height: 10px;
+    background-color: var(--blue-color);
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+
+}
+
+.text-line-bottom p{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 20px auto;
+}
+
+.another-container{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 300px;
+
+}
+.another-left{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.another-left i{
+font-size: 4rem;
+color: var(--green-color);
+}
+
+.another-left p{
+font-size: 1.5rem;
+color: var(--blue-color);
+}
+
+.another-left a{
+    text-decoration: none;
+    color: black;
+}
+
+
+
+
+.another-right{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.another-right i{
+font-size: 4rem;
+color: var(--green-color);
+}
+
+.another-right p{
+font-size: 1.5rem;
+color: var(--blue-color);
+}
+
+.another-right a{
+    text-decoration: none;
+    color: black;
+}
+@media screen and (max-width: 768px) {
+  form {
+    grid-template-columns: 1fr;
+  }
 }
