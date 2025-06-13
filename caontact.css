@@ -1,0 +1,372 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue-color: #05696b;
+  --green-color: #00bf63;
+  --white-color: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+    scroll-duration: 2s;
+  }
+}
+nav {
+  width: 100%;
+  background-color: var(--white-color);
+  top: 0;
+  opacity: 0.9;
+  position: fixed;
+}
+.nav-bar-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 200px;
+}
+
+.logo-container img {
+  width: 120px;
+  height: 120px;
+}
+
+.nav-menu-container {
+  /* background-color: #FFFF; */
+  padding: 0 20px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu a {
+  color: var(--blue-color);
+  text-decoration: none;
+  padding: 15px;
+  display: block;
+}
+
+/* Sous-menus */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%; /* sous le parent */
+  left: 0;
+  background-color: var(--blue-color);
+  list-style: none;
+  min-width: 160px;
+  z-index: 1000;
+}
+
+.submenu li a {
+  padding: 10px;
+  color: var(--white-color);
+}
+
+/* Afficher le sous-menu au survol */
+.has-submenu:hover .submenu {
+  display: block;
+}
+
+/* Optionnel : effet au survol */
+.menu a:hover,
+.submenu a:hover {
+  color: var(--white-color);
+  background-color: var(--green-color);
+}
+
+.contact {
+  background-color: var(--blue-color);
+  color: var(--white-color) !important;
+  height: 40px;
+  border-radius: 10px;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  padding-bottom: 10px;
+}
+
+.rdv {
+  border: 2px solid var(--blue-color);
+  border-radius: 10px;
+  height: 40px;
+}
+.contact-banner {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/images/bloc.jpg");
+  align-content: center;
+  background-size: cover;
+  width: 100%;
+  height: 700px;
+  border-radius: 20px;
+}
+
+.contact-banner-text {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: var(--white-color);
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+.contact-container {
+  padding: 20px 20px 20px 20px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 800px 1fr;
+  gap: 40px;
+}
+
+.contact-carte {
+  width: 80%;
+}
+.contact-carte iframe{
+    width: 100%;
+    border: 5px solid var(--blue-color);
+    border-radius: 20px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form h2 {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+form {
+  margin-right: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  /* justify-content: center; */
+  /* align-items: center; */
+  text-align: left;
+}
+
+.name-input{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.name-input label{
+  color: var(--blue-color);
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.name-input input{
+  padding-left: 10px;
+  height: 45px;
+  border: 2px solid var(--blue-color);
+  border-radius: 10px;
+  font-size: 1.2rem;
+}
+
+.message-input{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.message-input label{
+  color: var(--blue-color);
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.message-input textarea {
+  padding-left: 10px;
+  height: 205px;
+  border: 2px solid var(--blue-color);
+  border-radius: 10px;
+  font-size: 1.5rem;
+}
+
+.btn-submit{
+  display: flex;
+  justify-content: left !important;
+  text-align: left !important;
+
+}
+.btn-submit button{
+  width: 120px;
+  height: 40px;
+  background-color: var(--blue-color);
+  color: var(--white-color);
+  font-size: 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn-submit button:hover{
+  background-color: var(--white-color);
+  color: var(--blue-color);
+  filter: drop-shadow(0 0 10px var(--blue-color));
+}
+
+
+footer {
+  margin-top: 10px;
+  background-color: var(--blue-color);
+  width: 100%;
+}
+
+.footer-container {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.top-logo img {
+  width: 150px;
+  height: 100px;
+  border-radius: 20px;
+}
+
+.logo-text {
+  color: var(--white-color);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.top-menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style-type: none;
+}
+
+.top-menu ul a {
+  color: var(--white-color);
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.top-add {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+.top-add-1 {
+  color: var(--white-color);
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.top-add-2 {
+  color: var(--white-color);
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.text-newletter {
+  color: var(--white-color);
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+.newletter form{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+
+}
+input{
+  width: 300px;
+  height: 40px;
+  font-size: 1.5rem;
+  color: var(--blue-color);
+  font-weight: 600;
+  border: 2px solid var(--blue-color);
+  border-radius:10px;
+}
+
+button{
+  width: 130px;
+  height: 40px;
+  font-size: 1.2rem;
+  color: var(--blue-color);
+  font-weight: 600;
+  border: 2px solid var(--blue-color);
+  border-radius:10px;
+}
+
+.socials-links{
+  display: flex;
+ justify-content: right;
+ gap: 15px;
+}
+
+
+.socials-links i{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid var(--white-color);
+  color: var(--white-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.socials-links i:hover{
+    filter: drop-shadow(0 0 20px var(--white-color));
+
+}
