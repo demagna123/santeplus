@@ -26,6 +26,8 @@
   <body>
     <header>
       <nav>
+        
+
         <div class="nav-bar-container">
           <div
             class="logo-container"
@@ -34,6 +36,9 @@
           >
             <a href="index.html"><img src="./images/Santeplus.png" alt="" /></a>
           </div>
+          <button class="burger" id="burger-menu">
+          <i class="fas fa-bars" id="burger-icon"></i>
+        </button>
           <div class="nav-menu-container">
             <ul
               class="menu"
@@ -61,7 +66,9 @@
                   <li><a href="equipe.html">Notre Équipe</a></li>
                 </ul>
               </li>
-              <li><a href="rendezvous.html" class="rdv">Prendre rendez-vous</a></li>
+              <li>
+                <a href="rendezvous.html" class="rdv">Prendre rendez-vous</a>
+              </li>
               <li><a href="contact.html" class="contact">Contact</a></li>
               <a href="tel:+22822876543" class="tel">+228 22 87 65 43</a>
             </ul>
@@ -310,7 +317,7 @@
             </div>
 
             <div class="top-add-2">
-              Téléphone :+228 90 00 00 00 / 99 00 00 00 Email: <br>
+              Téléphone :+228 90 00 00 00 / 99 00 00 00 Email: <br />
               contact@santeplus.tg Horaires d’ouverture : 24h/7j
             </div>
           </div>
@@ -340,5 +347,24 @@
     <script>
       AOS.init();
     </script>
+
+    <script>
+  const burger = document.getElementById("burger-menu");
+  const navMenu = document.querySelector(".nav-menu-container");
+  const burgerIcon = document.getElementById("burger-icon");
+
+  burger.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+
+    // Alterne l'icône
+    if (navMenu.classList.contains("active")) {
+      burgerIcon.classList.remove("fa-bars");
+      burgerIcon.classList.add("fa-xmark");
+    } else {
+      burgerIcon.classList.remove("fa-xmark");
+      burgerIcon.classList.add("fa-bars");
+    }
+  });
+</script>
   </body>
 </html>
