@@ -1,0 +1,324 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue-color: #05696b;
+  --green-color: #00bf63;
+  --white-color: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+    scroll-duration: 2s;
+  }
+}
+nav {
+  width: 100%;
+  background-color: var(--white-color);
+  top: 0;
+  opacity: 0.9;
+  position: fixed;
+}
+.nav-bar-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 200px;
+}
+
+.logo-container img {
+  width: 120px;
+  height: 120px;
+}
+
+.nav-menu-container {
+  /* background-color: #FFFF; */
+  padding: 0 20px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu a {
+  color: var(--blue-color);
+  text-decoration: none;
+  padding: 15px;
+  display: block;
+}
+
+/* Sous-menus */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%; /* sous le parent */
+  left: 0;
+  background-color: var(--blue-color);
+  list-style: none;
+  min-width: 160px;
+  z-index: 1000;
+}
+
+.submenu li a {
+  padding: 10px;
+  color: var(--white-color);
+}
+
+/* Afficher le sous-menu au survol */
+.has-submenu:hover .submenu {
+  display: block;
+}
+
+/* Optionnel : effet au survol */
+.menu a:hover,
+.submenu a:hover {
+  color: var(--white-color);
+  background-color: var(--green-color);
+}
+
+.contact {
+  background-color: var(--blue-color);
+  color: var(--white-color) !important;
+  height: 40px;
+  border-radius: 10px;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  padding-bottom: 10px;
+}
+.contact-banner {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/images/bloc.jpg");
+  align-content: center;
+  background-size: cover;
+  width: 100%;
+  height: 700px;
+  border-radius: 20px;
+}
+
+.contact-banner-text {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: var(--white-color);
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+
+.equipe-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 👈 3 éléments par ligne */
+  gap: 20px;
+  padding: 30px;
+  background-color: #f8f9fa;
+}
+
+/* Responsive : 2 colonnes sur tablette, 1 colonne sur petit écran */
+@media (max-width: 992px) {
+  .equipe-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .equipe-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.medecin-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.medecin-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  display: block;
+}
+.medecin-card img {
+  border: 2px solid var(--blue-color);
+}
+
+
+.medecin-card h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #222;
+}
+
+.medecin-card .specialite {
+  font-weight: bold;
+  color: #555;
+  margin: 5px 0;
+}
+
+.medecin-card .description {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+
+
+footer {
+  margin-top: 10px;
+  background-color: var(--blue-color);
+  width: 100%;
+}
+
+.footer-container {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.top-logo img {
+  width: 150px;
+  height: 100px;
+  border-radius: 20px;
+}
+
+.logo-text {
+  color: var(--white-color);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.top-menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style-type: none;
+}
+
+.top-menu ul a {
+  color: var(--white-color);
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.top-add {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+.top-add-1 {
+  color: var(--white-color);
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.top-add-2 {
+  color: var(--white-color);
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.text-newletter {
+  color: var(--white-color);
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+.newletter form{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+
+}
+input{
+  width: 300px;
+  height: 40px;
+  font-size: 1.5rem;
+  color: var(--blue-color);
+  font-weight: 600;
+  border: 2px solid var(--blue-color);
+  border-radius:10px;
+}
+
+button{
+  width: 130px;
+  height: 40px;
+  font-size: 1.2rem;
+  color: var(--blue-color);
+  font-weight: 600;
+  border: 2px solid var(--blue-color);
+  border-radius:10px;
+}
+
+.socials-links{
+  display: flex;
+ justify-content: right;
+ gap: 15px;
+}
+
+
+.socials-links i{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid var(--white-color);
+  color: var(--white-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.socials-links i:hover{
+    filter: drop-shadow(0 0 20px var(--white-color));
+
+}
+
+
