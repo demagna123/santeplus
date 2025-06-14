@@ -391,7 +391,7 @@ nav {
 }
 
 .apropos-image {
-  background-image: url('/images/doc1.png');
+  background-image: url(';/images/doc1.png');
   background-repeat: no-repeat;
   background-size: cover;
   /* background-position: center; */
